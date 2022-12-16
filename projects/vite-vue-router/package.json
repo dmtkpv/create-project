@@ -1,0 +1,14 @@
+{
+  "scripts": {
+    "serve": "vite serve",
+    "build": "vite build"
+  },
+  "dependencies": {
+    "vue": "*",
+    "vue-router": "*"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "*",
+    "vite": "*"
+  }
+}
