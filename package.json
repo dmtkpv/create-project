@@ -1,7 +1,7 @@
 {
   "name": "@dmtkpv/create-project",
-  "version": "0.0.8",
-  "bin": "dist/index.mjs",
+  "version": "0.0.9",
+  "bin": "dist/index.js",
   "type": "module",
   "files": [
     "project-*",
@@ -9,7 +9,7 @@
   ],
   "scripts": {
     "watch": "rollup -c -w",
-    "publish": "node publish"
+    "release": "release-it"
   },
   "dependencies": {
     "prompts": "^2.4.2"
@@ -17,7 +17,12 @@
   "devDependencies": {
     "@rollup/plugin-commonjs": "^23.0.5",
     "@rollup/plugin-node-resolve": "^15.0.1",
-    "@rollup/plugin-terser": "^0.2.0",
+    "release-it": "^15.5.1",
     "rollup": "^3.7.4"
+  },
+  "release-it": {
+    "git": {
+      "requireCleanWorkingDir": false
+    }
   }
 }
