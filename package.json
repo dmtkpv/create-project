@@ -1,10 +1,10 @@
 {
   "name": "@dmtkpv/create-project",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "bin": "dist/index.js",
   "type": "module",
   "files": [
-    "project-*",
+    "projects",
     "dist"
   ],
   "scripts": {

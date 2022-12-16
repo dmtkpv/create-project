@@ -12,7 +12,7 @@ import prompts from 'prompts'
 // ---------------------
 
 function getProjectDir (name) {
-    return resolve(fileURLToPath(import.meta.url), '../..', `project-${name}`)
+    return resolve(fileURLToPath(import.meta.url), '../../projects', name)
 }
 
 function getPackageJson (directory) {
