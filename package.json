@@ -1,6 +1,6 @@
 {
   "name": "@dmtkpv/create-project",
-  "version": "0.0.14",
+  "version": "0.0.15",
   "bin": "dist/index.js",
   "type": "module",
   "files": [
@@ -9,6 +9,7 @@
   ],
   "scripts": {
     "watch": "rollup -c -w",
+    "build": "rollup -c",
     "release": "release-it"
   },
   "dependencies": {
@@ -24,6 +25,9 @@
     "git": {
       "requireCleanWorkingDir": false,
       "addUntrackedFiles": true
+    },
+    "hooks": {
+      "before:init": "npm run build"
     }
   }
 }
