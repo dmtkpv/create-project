@@ -1,4 +1,4 @@
-import { readFileSync, existsSync, cpSync, writeFileSync } from 'node:fs'
+import { readFileSync, existsSync, cpSync, writeFileSync, readdirSync } from 'node:fs'
 import { resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { promisify } from 'node:util'
@@ -11,9 +11,7 @@ import prompts from 'prompts'
 // Helpers
 // ---------------------
 
-function getProjectDir (name) {
-    return resolve(fileURLToPath(import.meta.url), '../../projects', name)
-}
+const projectsDir = resolve(fileURLToPath(import.meta.url), '../../projects');
 
 function getPackageJson (directory) {
     return JSON.parse(readFileSync(resolve(directory, 'package.json')));
@@ -36,22 +34,6 @@ async function updateDeps (modules = {}) {
     }
 }
 
-
-
-// ---------------------
-// Projects
-// ---------------------
-
-const projects = [
-    {
-        title: 'Vite + Vue',
-        value: getProjectDir('vite-vue'),
-    },
-    {
-        title: 'Vite + Vue + Router',
-        value: getProjectDir('vite-vue-router'),
-    }
-]
 
 
 
@@ -79,8 +61,9 @@ const questions = [
         type: 'select',
         name: 'project',
         message: 'Select a template:',
-        choices: projects,
-        initial: 0
+        initial: 0,
+        choices: readdirSync(projectsDir).map(title => ({ title, value: resolve(projectsDir, title) })),
+
     }
 ]
 
@@ -92,7 +75,7 @@ const questions = [
 
 async function init () {
 
-    const { directory, overwrite, project } = await prompts(questions);
+    const { directory, project } = await prompts(questions);
 
     console.log(`Scaffolding project in ${directory}...`)
     cpSync(project, directory, { recursive: true, force: true });

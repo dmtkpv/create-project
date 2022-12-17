@@ -1,6 +1,6 @@
 {
   "name": "@dmtkpv/create-project",
-  "version": "0.0.10",
+  "version": "0.0.12",
   "bin": "dist/index.js",
   "type": "module",
   "files": [
@@ -9,7 +9,7 @@
   ],
   "scripts": {
     "watch": "rollup -c -w",
-    "release": "release-it"
+    "publish": "release-it"
   },
   "dependencies": {
     "prompts": "^2.4.2"
