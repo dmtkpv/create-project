@@ -8,6 +8,6 @@ Create `/projects/<new-project-name>` directory.
 Directory must have `package.json` file.  
 Then run:
 ```
-npm run publish
+npm run release
 ```
 
