@@ -1,6 +1,6 @@
 {
   "name": "@dmtkpv/create-project",
-  "version": "0.0.12",
+  "version": "0.0.14",
   "bin": "dist/index.js",
   "type": "module",
   "files": [
@@ -9,7 +9,7 @@
   ],
   "scripts": {
     "watch": "rollup -c -w",
-    "publish": "release-it"
+    "release": "release-it"
   },
   "dependencies": {
     "prompts": "^2.4.2"
@@ -22,7 +22,8 @@
   },
   "release-it": {
     "git": {
-      "requireCleanWorkingDir": false
+      "requireCleanWorkingDir": false,
+      "addUntrackedFiles": true
     }
   }
 }
