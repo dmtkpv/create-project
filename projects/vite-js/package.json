@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "serve": "vite serve",
+    "build": "vite build"
+  },
+  "devDependencies": {
+    "vite": "*"
+  }
+}
